@@ -86,7 +86,7 @@ Noise and light may cause seizures in a person with tetanus. Infants with tetanu
 
     <string name="syphilis_string">
 <![CDATA[
-<p>About 3 weeks-although the range is from 10 to 90 days-after a person is infected with syphilis, a sore (chancre) that is usually painless often appears on the genitals. This first stage in the course of syphilis is referred to as the primary stage. The chancre usually heals without treatment in 3 to 6 weeks.</p>
+<p>About 3 weeks-although the range is from 10 to 90 days-after a person is infected with syphilis, a sore (chance) that is usually painless often appears on the genitals. This first stage in the course of syphilis is referred to as the primary stage. The chancre usually heals without treatment in 3 to 6 weeks.</p>
 
 <p>If syphilis is not treated during the primary stage, it often progresses to later stages.</p>
 
@@ -99,4 +99,103 @@ Noise and light may cause seizures in a person with tetanus. Infants with tetanu
 <p>If not detected and treated, syphilis may then progress to the tertiary (late) stage, the most destructive stage of syphilis. During this stage, syphilis may cause serious blood vessel and heart problems, mental disorders, blindness, nerve system problems, and even death. It may begin as early as 1 year after infection or at any time during the infected person\'s life. About one-third of untreated people who are infected with syphilis will have the complications of tertiary (late) syphilis. Any organ system (such as the central nervous system) may become involved.</p>]]>
 </string>
 
+    <string name="catscratch_string_tts">Bartonella henselae, the bacterium that causes cat scratch disease, is found all over the world.
+Cats and kittens carry the bacterium in their saliva. Although the infection does not make cats or kittens sick,
+they can transmit the infection to people, most often through a bite or a scratch.
+People cannot pass along the infection to other people.
+
+Cat scratch disease usually results in a sore appearing at the site of the bite or scratch a few days afterward,
+followed a week or two later by swelling of the lymph nodes * (swollen glands) near the bite or the scratch as
+the body\'s immune system fights off the infection. Adults will sometimes run a low fever, or have a headache and joint pain, or feel more tired than usual.
+Most people get better within about three weeks. People with weakened immune systems are at risk for more serious complications, which may include:
+
+• retinitis (re-ti-NY-tis): inflammation of the retina of the eye, which can cause blindness
+• encephalitis (en-sef-a-LY-tis): inflammation of the brain
+• seizures
+• infections of the liver, spleen, bones, or other organs.
+
+The doctor usually starts with a physical exam and a medical history, which should include information about contact with cats.
+The doctor may diagnose cat scratch disease if the person has fever, is feeling unwell, and has enlarged lymph nodes accompanied by a blister.
+Other ways to identify the disease include testing the blood for antibodies to Bartonella or performing a biopsy on an enlarged lymph node.
+
+Most people get better on their own. The doctor may prescribe antibiotics to help fight the bacterial infection,
+and the doctor may drain fluid from lymph nodes that are severely enlarged.
+People with weakened immune systems need continuing care from their doctors to minimize the risk of complications.</string>
+    <string name="hodgkins_string_tts">Hodgkin disease (Hodgkin lymphoma) is a type of lymphoma, a cancer that starts in white blood cells called lymphocytes.
+Lymphocytes are part of the immune system.
+
+Cancer starts when cells in the body begin to grow out of control.
+Cells in nearly any part of the body can become cancer, and can spread to other areas of the body
+
+Effect to the body:
+Itching skin
+Feeling Tired
+Loss of Appetite
+Breathlessness
+Fever
+Night Sweat
+
+If Hodgkin disease affects lymph nodes inside the chest, the swelling of these nodes might press on the windpipe (trachea)
+and make you cough or even have trouble breathing,
+especially when lying down. Some people might have pain behind the breast bone.
+
+Having one or more of the symptoms above does not mean you definitely have Hodgkin disease.
+In fact, many of these symptoms are more likely to be caused by other conditions,
+such as an infection. Still, if you or your child has any of these symptoms,
+have them checked by a doctor so that the cause can be found and treated, if needed.</string>
+    <string name="necrotizing_string_tts">Necrotizing fasciitis is a rare infection that\'s often described
+in media reports as a condition involving "flesh-eating bacteria."
+It can be fatal if not treated promptly.
+
+The bacteria that cause necrotizing fasciitis can enter the
+body following surgery or injury. They can also enter the body through:
+• minor cuts
+• insect bites
+• abrasions
+
+The symptoms of necrotizing fasciitis usually occur within the first 24 hours of infection. They often include a combination of the following:
+•	Increasing pain in the general area of a minor cut, abrasion, or other skin opening.
+•	Pain that is worse than would be expected from the appearance of the cut or abrasion.
+•	Redness and warmth around the wound, though symptoms can begin at other areas of the body.
+•       Flu-like symptoms such as diarrhea, nausea, fever,dizziness,weakness, and general malaise.
+•       Intense thirst due to dehydration.
+
+More advanced symptoms occur around the painful infection site within three to four days of infection. They include:
+•	Swelling, possibly accompanied by a purplish rash.
+•	Large, violet-colored marks that transform into blisters filled with dark, foul-smelling fluid.
+•	Discoloration, peeling, and flakiness as tissue death (gangrene) occurs.</string>
+    <string name="syphilis_string_tts">About 3 weeks-although the range is from 10 to 90 days-after a person is infected with syphilis, a sore (chance) that is
+usually painless often appears on the genitals. This first stage in the course of syphilis is referred to as the primary
+stage. The chancre usually heals without treatment in 3 to 6 weeks.
+
+If syphilis is not treated during the primary stage, it often progresses to later stages.
+
+In the secondary stage of syphilis, a skin rash will usually develop about 2 to 12 weeks after the chancre appears. The
+symptoms usually disappear without treatment within 2 months.
+
+After the rash clears, a person may have a period with no symptoms. This symptom-free period is called the latent (hidden)
+stage. Even though symptoms disappear, the bacteria that cause syphilis remain in the body and begin to damage the
+internal organs. The latent period may be as brief as 1 year or range from 5 to 20 years.
+
+A person is contagious during the primary and secondary stages and may still be contagious during the early part of the
+latent stage. During this time, symptoms of the second stage of syphilis may reappear. This is called a relapse and can
+occur several times.
+
+If not detected and treated, syphilis may then progress to the tertiary (late) stage, the most destructive stage of
+syphilis. During this stage, syphilis may cause serious blood vessel and heart problems, mental disorders, blindness,
+nerve system problems, and even death. It may begin as early as 1 year after infection or at any time during the infected
+person\'s life. About one-third of untreated people who are infected with syphilis will have the complications of tertiary
+(late) syphilis. Any organ system (such as the central nervous system) may become involved.</string>
+    <string name="tetanus_string_tts">Tetanus - The bacteria Clostridium tetani are present in soil and in animal feces.
+
+The bacteria can produce spores, which are a special form of the bacteria that is resistant to heat and disinfectants.
+
+When spores enter the skin through a wound, they can germinate into the more active form of Clostridium tetani. The bacteria can then produce a substance that is very toxic (poisonous) to human beings. This toxin causes the symptoms of tetanus.
+
+Stiffness of the jaw (lockjaw) is the most common symptom of tetanus.
+ A person with tetanus has difficulty opening his or her mouth. Other muscles become stiff (back, abdomen, face).
+If the muscles of the face stiffen, a person with tetanus looks as if he or she has a fixed smile that does not change.
+
+The patient may also have a fever, perspire heavily, have a rapid pulse, feel restless, and have muscle spasms.
+Noise and light may cause seizures in a person with tetanus. Infants with tetanus are unable to nurse because they lose their ability to suck.</string>
 </resources>

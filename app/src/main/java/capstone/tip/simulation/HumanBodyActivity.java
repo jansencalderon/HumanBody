@@ -2,9 +2,13 @@ package capstone.tip.simulation;
 
 import android.app.Dialog;
 import android.content.ClipData;
+import android.content.DialogInterface;
+import android.os.Build;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,9 +23,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-public class HumanBodyActivity extends AppCompatActivity implements View.OnDragListener, View.OnTouchListener {
+import java.util.Locale;
+
+public class HumanBodyActivity extends AppCompatActivity implements View.OnDragListener, View.OnTouchListener, TextToSpeech.OnInitListener {
 
     ImageView catScratch, hodgkinsDisease, necrotizing, syphilis, tetanus;
+    TextToSpeech textToSpeech;
     LinearLayout panel, humanbodyLayout;
     public static final int[] SIMULATION_DRAWABLES = {R.drawable.cat_scratch, R.drawable.hodgkins_disease, R.drawable.necrotizing
             , R.drawable.syphilis, R.drawable.tetanus};
@@ -31,9 +38,9 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
 
     public View onHold = null;
 
-    int[] drawables_cats = {R.drawable.catscratch_img_1,R.drawable.catscratch_img_2,R.drawable.catscratch_img_3,R.drawable.catscratch_img_4};
+    int[] drawables_cats = {R.drawable.catscratch_img_1, R.drawable.catscratch_img_2, R.drawable.catscratch_img_3, R.drawable.catscratch_img_4};
 
-    int[] drawables_tetanus ={R.drawable.tetanus_img_1,R.drawable.tetanus_img_2,R.drawable.tetanus_img_3};
+    int[] drawables_tetanus = {R.drawable.tetanus_img_1, R.drawable.tetanus_img_2, R.drawable.tetanus_img_3};
 
     int[] drawables_hodgkins = {R.drawable.hodgkins_img_1,
             R.drawable.hodgkins_img_2,
@@ -63,6 +70,8 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_human_body);
+
+        textToSpeech = new TextToSpeech(this, this);
 
         panel = (LinearLayout) findViewById(R.id.panel);
         humanbodyLayout = (LinearLayout) findViewById(R.id.humanBody);
@@ -131,24 +140,24 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
     private void showResult(int id) {
         switch (id) {
             case R.id.cat_scratch:
-                showDialog("Cat's Scratch", getString(R.string.catscratch_string), drawables_cats);
+                showDialog("Cat's Scratch", getString(R.string.catscratch_string),getString(R.string.catscratch_string_tts), drawables_cats);
                 break;
             case R.id.hodgkinds_disease:
-                showDialog("Hodgkin's Disease", getString(R.string.hodgkins_string), drawables_hodgkins);
+                showDialog("Hodgkin's Disease", getString(R.string.hodgkins_string),getString(R.string.hodgkins_string_tts), drawables_hodgkins);
                 break;
             case R.id.necrotizing:
-                showDialog("Necrotizing Fasciitis", getString(R.string.necrotizing_string),drawables_necrotizing);
+                showDialog("Necrotizing Fasciitis", getString(R.string.necrotizing_string),getString(R.string.necrotizing_string_tts), drawables_necrotizing);
                 break;
             case R.id.syphilis:
-                showDialog("Syphilis",getString(R.string.syphilis_string),drawables_syphilis);
+                showDialog("Syphilis", getString(R.string.syphilis_string), getString(R.string.syphilis_string_tts),drawables_syphilis);
                 break;
             case R.id.tetanus:
-                showDialog("Tetanus",getString(R.string.tetanus_string),drawables_tetanus);
+                showDialog("Tetanus", getString(R.string.tetanus_string), getString(R.string.tetanus_string_tts),drawables_tetanus);
                 break;
         }
     }
 
-    private void showDialog(String title, String resultText, int[] resultDrawables) {
+    private void showDialog(String title, String resultText, String tts, int[] resultDrawables) {
         Dialog d = new Dialog(this);
         d.requestWindowFeature(Window.FEATURE_NO_TITLE);
         d.setCancelable(true);
@@ -158,6 +167,15 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
         LinearLayout imagesPanel = (LinearLayout) d.findViewById(R.id.imageLayout);
         result.setText(Html.fromHtml(resultText));
         titleTv.setText(title);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            textToSpeech.speak(tts, TextToSpeech.QUEUE_FLUSH, null,tts);
+        } else {
+            //noinspection deprecation
+            textToSpeech.speak(resultText, TextToSpeech.QUEUE_FLUSH, null);
+        }
+
+
         for (int i = 0; i < resultDrawables.length; i++) {
             final ImageView imageView = new ImageView(this);
 
@@ -167,6 +185,14 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
                     .into(imageView);
             imagesPanel.addView(imageView);
         }
+        d.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (textToSpeech != null) {
+                    textToSpeech.stop();
+                }
+            }
+        });
         d.show();
 
     }
@@ -206,4 +232,27 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
     }
 
 
+    @Override
+    public void onInit(int i) {
+        if (i == TextToSpeech.SUCCESS) {
+
+            int result = textToSpeech.setLanguage(Locale.US);
+
+            if (result == TextToSpeech.LANG_MISSING_DATA
+                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS", "This Language is not supported");
+                Toast.makeText(this, "The TextToSpeech Language is not Supported", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "TextToSpeech Initialization Failed!", Toast.LENGTH_SHORT).show();
+            Log.e("TTS", "Initilization Failed!");
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        textToSpeech.shutdown();
+    }
 }
