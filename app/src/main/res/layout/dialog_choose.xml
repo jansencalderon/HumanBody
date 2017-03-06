@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040"
+    android:minWidth="300dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="CHOOSE BACTERIA"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/cat_scratch_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/cat_scratch" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Cat Scratch"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/hodgkinds_disease_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/hodgkins_disease" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Hodgkin's Disease"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/necrotizing_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/necrotizing" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Necrotizing Fasciitis"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/syphilis_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/syphilis" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Syphilis"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tetanus_button"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tetanus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Tetanus"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</LinearLayout>
