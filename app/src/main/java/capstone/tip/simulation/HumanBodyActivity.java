@@ -118,7 +118,6 @@ public class HumanBodyActivity extends AppCompatActivity implements View.OnDragL
                     if (isFinished(count)) {
                         showResult(choice);
                     }
-
                 } else {
                     imageView.setVisibility(View.VISIBLE);
                 }

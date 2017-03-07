@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="capstone.tip.simulation.BloodActivity">
+
+    <RelativeLayout
+        android:id="@+id/step1"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/patient"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16sp"
+            android:text="Step 1: Get a blood sample from a parient with immune mediatedheamoltytic anemia. Using the injection drag the injection in the arm."
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/step1_panel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/step1_syringe"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/syringe_clean" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/patient"
+            android:layout_width="445dp"
+            android:layout_height="189dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/patient"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+        <Button
+            android:id="@+id/proceed_to_step2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:background="#ff6f6f"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="NEXT STEP"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="20sp"
+            android:text="Step 2: Put the blood sample in the test tube"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/step2_panel"
+            android:layout_width="50dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="26dp">
+
+            <ImageView
+                android:id="@+id/step2_tube"
+                android:layout_width="50dp"
+                android:layout_height="120dp"
+                android:src="@drawable/tube_clean" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/patient_step2"
+            android:layout_width="445dp"
+            android:layout_height="189dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/step2_syringe"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/syringe" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/show_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="SHOW RESULTS"
+            android:background="#ff6f6f"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/step3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:padding="20dp"
+                android:src="@drawable/blood_result" />
+
+            <Button
+                android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="#ff6f6f"
+                android:textColor="#ffffff"
+                android:text="CLOSE" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
