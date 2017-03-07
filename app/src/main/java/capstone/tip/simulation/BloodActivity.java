@@ -39,6 +39,38 @@ public class BloodActivity extends AppCompatActivity implements TextToSpeech.OnI
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.patient);
         final Button button = (Button) findViewById(R.id.proceed_to_step2);
         button.setVisibility(View.GONE);
+
+        step1.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View view, DragEvent dragEvent) {
+                ImageView imageView = (ImageView) dragEvent.getLocalState();
+                switch (dragEvent.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        break;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if (isEnterableStep1(view, imageView)) {
+                            View view1 = (View) dragEvent.getLocalState();
+                            ViewGroup owner = (ViewGroup) view1.getParent();
+                            owner.removeView(view1);
+                            LinearLayout container = (LinearLayout) view;
+                            container.addView(view1);
+                            view1.setVisibility(View.VISIBLE);
+                            imageView.setImageResource(R.drawable.syringe);
+                            button.setVisibility(View.VISIBLE);
+                        } else {
+                            imageView.setVisibility(View.VISIBLE);
+                        }
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        break;
+                }
+                return true;
+            }
+        });
         linearLayout.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View view, DragEvent dragEvent) {
@@ -135,6 +167,40 @@ public class BloodActivity extends AppCompatActivity implements TextToSpeech.OnI
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.patient_step2);
         final Button button = (Button) findViewById(R.id.show_result);
         button.setVisibility(View.GONE);
+
+        step2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View view, DragEvent dragEvent) {
+                ImageView imageView = (ImageView) dragEvent.getLocalState();
+                switch (dragEvent.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        break;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        if (isEnterableStep2(view, imageView)) {
+                            View view1 = (View) dragEvent.getLocalState();
+                            ViewGroup owner = (ViewGroup) view1.getParent();
+                            owner.removeView(view1);
+                            LinearLayout container = (LinearLayout) view;
+                            container.addView(view1);
+                            view1.setVisibility(View.VISIBLE);
+                            imageView.setImageResource(R.drawable.syringe);
+                            button.setVisibility(View.VISIBLE);
+                            tube.setImageResource(R.drawable.tube);
+                        } else {
+                            imageView.setVisibility(View.VISIBLE);
+                        }
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        break;
+                }
+                return true;
+            }
+        });
+
 
         linearLayout.setOnDragListener(new View.OnDragListener() {
             @Override
